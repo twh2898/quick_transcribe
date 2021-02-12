@@ -5,13 +5,9 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.prefs.BackingStoreException;
-import java.util.prefs.NodeChangeListener;
-import java.util.prefs.PreferenceChangeListener;
 import java.util.prefs.Preferences;
 
 import javax.swing.JButton;
@@ -40,8 +36,6 @@ public class MainPanel extends JPanel {
 	private static final String DICTIONARY_DEFAULT = "resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict";
 	private static final String LANGUAGE_MODEL_DEFAULT = "resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin";
 	
-	private static final String PAUSE_LABEL = "Pause";
-	private static final String RESUME_LABEL = "Resume";
 
 	private static final int TEXT_FIELD_WIDTH = 30;
 
@@ -147,7 +141,6 @@ public class MainPanel extends JPanel {
 		gbc.gridwidth = 3;
 		gbc.weightx = 1.0;
 		JPanel buttonPanel = new JPanel();
-//		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
 
 		button = new JButton("Run / Pause");
 		button.addActionListener((ActionEvent e) -> {
@@ -174,16 +167,6 @@ public class MainPanel extends JPanel {
 			}
 		});
 		buttonPanel.add(button);
-
-//		button = new JButton(PAUSE_LABEL);
-//		button.addActionListener((ActionEvent e) -> {
-//			if (transcriber != null) {
-//				if (!transcriber.isPaused()) {
-//					transcriber.pause();
-//				}
-//			}
-//		});
-//		buttonPanel.add(button);
 
 		button = new JButton("Stop");
 		button.addActionListener((ActionEvent e) -> {
@@ -231,11 +214,6 @@ public class MainPanel extends JPanel {
 	private JButton fileBrowserButton(JTextField field, String key) {
 		JButton button = new JButton("...");
 		button.addActionListener((ActionEvent e) -> {
-//			JFileChooser fc = new JFileChooser();
-//			int ret = fc.showOpenDialog(this);
-//			if (ret == JFileChooser.APPROVE_OPTION) {
-//				field.setText(fc.getSelectedFile().getAbsolutePath());
-//			}
 			FileDialog fd = new FileDialog((java.awt.Frame) null);
 			fd.setTitle("Open File");
 			if (field.getText().length() > 0) {

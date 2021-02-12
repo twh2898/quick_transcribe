@@ -65,7 +65,3 @@ or
 ./gradlew.bat run
 ```
 
-## Licence
-
-quick\_transcribe uses the [MIT](LICENCE) licence 
-
