@@ -20,5 +20,3 @@ ffmpeg -i $INPUT -acodec pcm_s16le -ac 1 -ar 16000 $OUTPUT
 RET=$?
 echo "Finished with code $RET"
 
-exit $RET
-
