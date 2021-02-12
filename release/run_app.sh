@@ -1,4 +1,4 @@
 #!/bin/bash
 
-java -jar quick_translate.jar
+java -jar quick_transcribe.jar
 
