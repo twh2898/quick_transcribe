@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'application'
+    id 'java-library'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'TranscriberApp'
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url "https://dl.bintray.com/jetbrains/intellij-third-party-dependencies/" }
+}
+
+dependencies {
+    compile group: 'org.apache.commons', name: 'commons-math3', version: '3.6'
+    compile group: 'edu.cmu.sphinx', name: 'sphinx4-core', version:'5prealpha-SNAPSHOT'
+    compile group: 'edu.cmu.sphinx', name: 'sphinx4-data', version:'5prealpha-SNAPSHOT'
+
+    // https://mvnrepository.com/artifact/org.jetbrains.intellij.deps/ini4j
+    compile group: 'org.jetbrains.intellij.deps', name: 'ini4j', version: '0.5.5-2'
+}
+
+application {
+    mainClass = 'TranscriberApp'
+}
+

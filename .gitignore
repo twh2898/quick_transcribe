@@ -1,0 +1,14 @@
+bin/
+build/
+gradle/
+.gradle/
+.metadata/
+.settings/
+defaults.ini
+test.wav
+transcription.txt
+.classpath
+.project
+gradlew
+gradlew.bat
+
